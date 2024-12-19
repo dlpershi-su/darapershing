@@ -1,0 +1,378 @@
+body {
+    font-family: Georgia, serif;
+    color: #172121;
+    background-color: #FFF5FD;
+}
+
+.skip-to-content {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #022E57;
+    color: white;
+    padding: 10px;
+    z-index: 100;
+    text-decoration: none;
+    transition: top 0.3s ease-in-out;
+}
+
+.skip-to-content:focus {
+    top: 0;
+}
+
+h1, h2 {
+    color: #022E57;
+}
+
+h1 {
+    font-size: 3em;
+    color: #022E57;
+    display: inline;
+    padding: 0 10px;
+    position: relative;
+    text-shadow: 5px 5px 0 rgba(255, 150, 173, 0.3); 
+}
+
+h2 {
+    font-size: 1.5em;
+    text-decoration: underline;
+    text-decoration-color: rgba(255, 150, 173, 0.3);
+    text-underline-offset: 4px;
+}
+
+nav {
+    background-color: #022E57;
+    padding: 30px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+}
+
+nav a {
+    color: #FFF5FD;
+    font-size: larger;
+    text-decoration: none;
+    margin: 10px;
+    position: relative;  /* To position the pseudo-element */
+    display: inline-block; /* Ensures proper sizing of the anchor */
+    box-sizing: border-box; /* Includes padding in the width calculation */
+}
+
+nav a::before {
+    content: '';  /* Empty content for the underline */
+    position: absolute;
+    bottom: -4px;  /* Position the underline at the bottom of the link */
+    left: 0;  /* Start the underline from the left */
+    width: 0;  /* Start with no width */
+    height: 2px;  /* The thickness of the underline */
+    background-color: #FF96AD;  /* Pink underline */
+    transition: width 0.2s ease;  /* Smooth transition for the width */
+}
+
+nav a:hover::before {
+    width:100%;  /* Expand the underline to full width on hover */
+}
+
+nav a:hover {
+    
+    text-decoration: none;  /* Remove default underline */
+}
+
+
+.home_content {
+    display: flex;
+    margin: 10px;
+    align-items: center; 
+    justify-content: center;
+}
+
+
+.headshot {float: left; margin: 10px; margin-right: 80px; }
+
+.main_text{  
+    text-align: center;
+}
+
+#main_title {
+    font-size: 3.5em;
+}
+
+.contact_button {
+    background-color:#022E57; 
+    color: #FFF5FD; 
+    padding: 15px 30px; 
+    text-decoration: none; 
+    border: 2px solid #022E57;
+    border-radius: 5px; 
+    font-size: 2em; 
+    display: inline-block; 
+    margin-top: 40px; 
+    transition: 0.3s;
+
+}
+
+.contact_button:hover {
+    background-color: #FFF5FD;
+    border: 2px solid #022E57;
+    color:#022E57;
+
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    margin-top: auto; /* Pushes footer to the bottom */
+}
+
+footer {
+    background-color: #022E57; /* Match the nav bar color */
+    color: #FFF5FD; /* Text color in the footer */
+    text-align: center;
+    padding: 20px 0; /* Padding for space around text */
+    margin-top: auto; /* Push footer to the bottom */
+}
+
+footer hr {
+    border: none;
+    border-top: 1px solid #FFF5FD; /* Light colored line */
+    margin: 0 0 10px 0;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center; /* Center the icons horizontally */
+    gap: 15px; /* Space between icons */
+    margin-top: 10px; /* Space above icons */
+}
+
+.social-icons img {
+    transition: transform 0.3s; /* Smooth hover effect */
+}
+
+.social-icons img:hover {
+    transform: scale(1.1); /* Slightly enlarge icons on hover */
+}
+
+
+.resume {
+    height: 100vh; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+}
+.full-screen-embed {
+    width: 100%;
+    height: 100%;
+    border: none; 
+    margin-top: 60px;
+}
+
+/* Styling rows and layout */
+.code_row, .design_row1, .design_row2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    margin-bottom: 80px;
+}
+
+.code_project, .design_project {
+    position: relative;
+    width: 400px; /* Set a fixed width */
+    height: 400px; /* Set a fixed height */
+    overflow: hidden; /* Crop images if needed */
+    border: 0px solid #FF96AD; /* Border around boxes */
+    border-radius: 5px; /* Rounded corners */
+    background-color: #FFF5FD; /* Background color for padding effect */
+    box-sizing: border-box; /* Includes padding and border in size */
+}
+
+.code_project img, .design_project img {
+    width: 100%; /* Fill the width of the container */
+    height: 100%; /* Fill the height of the container */
+    object-fit: cover; /* Ensure the image maintains aspect ratio and fills the box */
+}
+
+/* Overlay effect */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 150, 173, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0; /* Hidden initially */
+    transition: opacity 0.3s ease; /* Smooth transition on hover */
+}
+
+.code_project:hover .overlay, .design_project:hover .overlay {
+    opacity: 1; /* Show overlay on hover */
+}
+
+.overlay p {
+    color: #FFF5FD; /* White text */
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+    margin: 0; /* Remove default margins */
+}
+
+
+hr {
+    border: none;
+    border-top: 1px solid #022E57;
+}
+
+
+.about_section {
+    display: flex;
+    align-items: flex-start; 
+    gap: 100px; 
+    margin: 40px;
+}
+
+.about_image img {
+    max-width: 100%; 
+    height: auto; 
+    min-width: 250px; 
+    max-width: 500px;
+    margin-top: -150px;
+}
+
+   /* Carousel Container */
+   .carousel {
+    position: relative;
+    max-width: 50%; /* Make it responsive */
+    margin: auto;
+    overflow: hidden;
+}
+
+/* Carousel Slides */
+.carousel-slide {
+    display: none; /* Hide all images initially */
+    text-align: center;
+}
+
+.carousel-slide img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+
+
+
+/* Media query for devices with screen width of 600px or smaller (i.e., phones) */
+@media (max-width: 600px) {
+    /* Adjust layout for smaller screens */
+    nav {
+        display: flex;
+        flex-direction: column;  /* Stack navigation links vertically */
+        align-items: center;  /* Center links horizontally */
+        padding: 20px;
+    }
+
+    nav a {
+        margin: 15px;  /* Increase padding for better tap targets */
+        font-size: 1.2em;  /* Adjust font size for readability */
+        text-align: center;  /* Center text */
+    }
+    
+    nav a::before {
+        content: '';  /* Empty content for the underline */
+        position: absolute;
+        bottom: -4px;  /* Position the underline at the bottom of the link */
+        left: 0;  /* Start the underline from the left */
+        width: 0;  /* Start with no width */
+        height: 2px;  /* The thickness of the underline */
+        background-color: #FF96AD;  /* Pink underline */
+        transition: width 0.2s ease;  /* Smooth transition for the width */
+    }
+
+    .home_content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .headshot img {
+        width: 100%;  /* Make the image responsive */
+        height: auto;
+    }
+
+    .resume {
+        height: 100vh; 
+        display: flex; 
+        align-items: center; 
+        justify-content: center; 
+    }
+    .full-screen-embed {
+        width: 100%;
+        height: 100%;
+        border: none; 
+        margin-top: 60px;
+    }
+
+    .about_section {
+        flex-direction: column;  /* Stack text and image vertically */
+        align-items: center;
+    }
+
+    .about_text {
+        text-align: center;  /* Center text for better readability */
+    }
+
+    .about_image img {
+        width: 100%;  /* Make the image responsive */
+        height: auto;
+        margin-top: 20px;  /* Add margin to separate image and text */
+    }
+
+   /* Carousel Container */
+   .carousel {
+    position: relative;
+    max-width: 80%; /* Make it responsive */
+    margin: auto;
+    overflow: hidden;
+}
+
+/* Carousel Slides */
+.carousel-slide {
+    display: none; /* Hide all images initially */
+    text-align: center;
+}
+
+.carousel-slide img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+
+
+    .photo_project img {
+        width: 90%;  /* Make photos responsive */
+        height: auto;
+    }
+
+    h1 {
+        font-size: 2em;  /* Adjust heading font size for smaller screens */
+    }
+
+    h2 {
+        font-size: 1.2em;  /* Adjust subheading font size */
+    }
+
+    p {
+        font-size: 1em;  /* Adjust paragraph font size */
+    }
+
+    footer {
+        text-align: center;  /* Center footer text */
+        padding: 20px;
+    }
+}
